@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document </title>
+    <style>
+        *{
+            background-color: rgb(132, 157, 238) ;
+        }
+
+        #input_box{
+            display: flex;
+            justify-content: space-between;
+            width: 50%;
+            height: 40px;
+            margin: auto;
+            border: 1px solid;
+            padding: 10px;
+            background-color: black;
+            border-radius: 20px;
+            position: sticky;
+        }
+        #Search{
+            display: block;
+            width: 80%;
+            height: 40px;
+            border: 0px solid ;
+            background-color: black;
+            font-size: 25px;
+            color: white;
+            /* border: none; */
+        }
+        /* #search:{
+            border-color: red;
+            color: red;
+            font -size: 100px;
+        } */
+        #image{
+            display: block;
+            width: 15px;
+            height: 15px;
+            background-color: yellow;
+            /* vertical-align: middle; */
+            border-radius: 12px;
+            padding: 15px;
+        }
+        #append{
+            /* color: black; */
+            border: 1px solid black;
+            border-top: none;
+            margin: auto;
+            padding: 10px;
+            width: 50%;
+            height: 200px;
+            overflow: scroll; ;
+            font-size: 22px;
+            color: white;
+            /* display:none; */
+            
+        }
+    </style>
+    
+</head>
+<body>
+   
+    <div>
+        <img src="Star_Wars_Img.png" alt="" style="display: block; height: 30%; width: 30%; margin:10% auto 5% auto;  ">
+    </div>
+    <div id="input_box">
+        <input id="Search" type="text" oninput="main()" placeholder="Search Characters"  style=" outline-offset: -25px;"> 
+        <input id="image" type="image" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDExOC43ODMgMTE4Ljc4MyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PGc+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+Cgk8cGF0aCBkPSJNMTE1Ljk3LDEwMS41OTdMODguNjYxLDc0LjI4NmM0LjY0LTcuMzg3LDcuMzMzLTE2LjExOCw3LjMzMy0yNS40ODhjMC0yNi41MDktMjEuNDktNDcuOTk2LTQ3Ljk5OC00Ny45OTYgICBTMCwyMi4yODksMCw0OC43OThjMCwyNi41MSwyMS40ODcsNDcuOTk1LDQ3Ljk5Niw0Ny45OTVjMTAuMTk3LDAsMTkuNjQyLTMuMTg4LDI3LjQxNC04LjYwNWwyNi45ODQsMjYuOTg2ICAgYzEuODc1LDEuODczLDQuMzMzLDIuODA2LDYuNzg4LDIuODA2YzIuNDU4LDAsNC45MTMtMC45MzMsNi43OTEtMi44MDZDMTE5LjcyLDExMS40MjMsMTE5LjcyLDEwNS4zNDcsMTE1Ljk3LDEwMS41OTd6ICAgIE00Ny45OTYsODEuMjQzYy0xNy45MTcsMC0zMi40NDMtMTQuNTI1LTMyLjQ0My0zMi40NDNzMTQuNTI2LTMyLjQ0NCwzMi40NDMtMzIuNDQ0YzE3LjkxOCwwLDMyLjQ0MywxNC41MjYsMzIuNDQzLDMyLjQ0NCAgIFM2NS45MTQsODEuMjQzLDQ3Ljk5Niw4MS4yNDN6IiBmaWxsPSIjMDAwMDAwIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIj48L3BhdGg+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPC9nPjwvc3ZnPg==">
+    </div>
+
+    <div id="append">
+        <!-- append data Here -->
+    </div>
+    <!-- <div class="container"> -->
+        
+    <!-- </div> -->
+</body>
+
+</html>
+
+<script>
+    // https://swapi.dev/api/people/?search=
+
+    
+
+    async function main(){
+        // let inp = document.querySelector("#Search") ;
+        // inp.style.borderColor = "black" ;
+
+        let query = document.querySelector("#Search").value ;
+        
+        let response =  await searchFun(query) ;
+        // console.log(response) 
+        // let data =  response ;
+        // if(query==null){
+        //     document.querySelector("#append").innerHTML =null ;    
+        // }
+        appendMovie(response) ;
+    }
+
+    function appendMovie(res){
+        document.querySelector("#append").innerHTML =null ;
+
+        // document.querySelector("#Search").addEventListener("click", function (){
+        //     console.log("hello") ;
+        //     div.style.display = "block" ; 
+        // })
+        res.forEach(function (ele){  //console.log(ele) ;
+            let div = document.createElement("div") ;
+
+            let p= document.createElement("p") ;
+            p.innerText= ele.name ;
+            p.addEventListener("click", function (){
+                // console.log(ele) ;
+                
+                localStorage.setItem("data",JSON.stringify(ele))
+                document.querySelector("#append").innerHTML =null ;
+                window.location.href = "index1.html" ;
+            })
+            div.append(p) ;
+            document.querySelector("#append").append(div) ;
+        })
+    }
+
+    async function searchFun(query){
+       try{ let url = `https://swapi.dev/api/people/?search=${query}` ;
+
+        let res =(await fetch(url))
+
+        let data =await res.json() ;
+        return data.results ;
+    }
+    catch(err){
+        console.log("err:",err) ;
+    }
+    }
+</script>

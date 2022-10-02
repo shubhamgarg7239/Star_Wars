@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         
+        *{
+            background-color: rgb(54, 66, 105) ;
+        }
+
+        #container{
+            width: 50%;
+            margin:50px auto;
+            text-align: center;
+            /* border: 10px solid blue; */
+            box-shadow: rgb(222, 221, 221) 0px 2px 5px 0px, rgba(187, 187, 187, 0.966) 0px 1px 1px 0px;
+            padding: 20px;
+            color: whitesmoke;
+        }
+        #box {
+            /* width: 70%; */
+            margin: auto;
+            display: flex;
+            justify-content: space-evenly;
+            gap: 20px;
+        }
+        #div1,#div2{
+            /* border: 5px solid red; */
+            box-shadow: rgb(222, 221, 221) 0px 2px 5px 0px, rgba(187, 187, 187, 0.966) 0px 1px 1px 0px;
+            padding: 10px;
+            font-size: 25px;
+        }
+        #div1:hover{
+            box-shadow: rgb(222, 221, 221) 0px 50px 100px -20px, rgba(187, 187, 187, 0.3) 0px 30px 60px -30px;
+        }
+        #div2:hover{
+            box-shadow: rgb(222, 221, 221) 0px 50px 100px -20px, rgba(187, 187, 187, 0.3) 0px 30px 60px -30px;
+        }
+        p{
+            text-align: left;
+        }
+        button{
+            margin-top: 20px;
+            width: 120px;
+            height: 50px;
+            border-radius: 10px;
+            border-color: white;
+            font-size: 25px;
+            padding: 10px;
+            background-color:rgb(12,25,44);
+            color: white;
+        }
+         
+    </style>
+    
+</head>
+
+<body>
+     
+    <div id="container">
+        <div id="name"></div>
+        <div id="box">
+            <div id="div1">
+                <h3>Personal Info</h3>
+            </div>
+            <div id="div2">
+                <h3>Anatomy</h3>
+            </div>
+        </div>
+        <a href="index.html"> <button style="box-sizing:content-box; cursor: pointer;">Go Back</button> </a>
+    </div>
+
+
+</body>
+
+</html>
+
+<script>
+    let data = JSON.parse(localStorage.getItem("data"));
+
+    displayData(data);
+
+    function displayData(data) {
+        // console.log(data) ;
+        let name = document.createElement("h1");
+        name.innerText = data.name;
+
+        let birth_year = document.createElement("p");
+        birth_year.innerText = "Birth Year :" + data.birth_year;
+
+        let eye_color = document.createElement("p");
+        eye_color.innerText = "Eye Color :" + data.eye_color;
+
+        let gender = document.createElement("p");
+        gender.innerText = "Gender :" + data.gender;
+
+        let hair_color = document.createElement("p");
+        hair_color.innerText = "Hair Color :" + data.hair_color;
+
+        let height = document.createElement("p");
+        height.innerText = "Height :" + data.height;
+
+        let mass = document.createElement("p");
+        mass.innerText = "Mass :" + data.mass;
+
+        document.querySelector("#name").append(name);
+        document.querySelector("#div1").append(birth_year, gender, height);
+        document.querySelector("#div2").append(eye_color, mass, hair_color);
+    }
+</script>
